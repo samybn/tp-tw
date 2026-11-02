@@ -14,6 +14,12 @@ server.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, 'views/index.html'));
 });
 
+server.get("/tailwind", (req, res) => {
+  res.sendFile(path.join(__dirname, 'views/tailwind.html'));
+});
+
 server.listen(5000, () => {
-  console.log('Listening on port ' + 5000);
+  console.log('Serveur démarré sur http://localhost:5000/');
+  console.log('Version Bootstrap : http://localhost:5000/');
+  console.log('Version Tailwind  : http://localhost:5000/tailwind');
 });

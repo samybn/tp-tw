@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FleurExpress - Version TailwindCSS</title>
+  <link rel="stylesheet" href="/tailwind/tailwind.css">
+  <style>
+    body {
+      padding-top: 70px;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- 1. Barre de navigation fixe TailwindCSS avec spinner jaune et deux sous-menus -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-blue-600 text-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+
+        <!-- Navbar Brand avec Spinner Jaune (Warning) -->
+        <div class="flex items-center space-x-3">
+          <div class="inline-block animate-spin rounded-full h-6 w-6 border-4 border-yellow-400 border-t-transparent"
+            role="status"></div>
+          <span class="font-bold text-xl tracking-wide">FleurExpress</span>
+        </div>
+
+        <!-- Menu de navigation desktop -->
+        <div class="hidden md:flex items-center space-x-6">
+          <a href="#" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-700">Accueil</a>
+
+          <!-- Premier sous-menu (dropdown) -->
+          <div class="relative group">
+            <button type="button"
+              class="px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-700 inline-flex items-center">
+              Nos Variétés
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div
+              class="absolute left-0 mt-2 w-48 bg-white text-gray-800 rounded-md shadow-lg py-1 hidden group-hover:block z-50">
+              <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-100">Roses</a>
+              <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-100">Tulipes</a>
+              <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-100">Lys Blancs</a>
+              <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-100">Orchidées</a>
+              <hr class="my-1 border-gray-200">
+              <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-100">Compositions Personnalisées</a>
+            </div>
+          </div>
+
+          <!-- Deuxième sous-menu (dropdown) -->
+          <div class="relative group">
+            <button type="button"
+              class="px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-700 inline-flex items-center">
+              Services &amp; Livraison
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div
+              class="absolute left-0 mt-2 w-56 bg-white text-gray-800 rounded-md shadow-lg py-1 hidden group-hover:block z-50">
+              <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-100">Livraison à Domicile</a>
+              <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-100">Livraison Express (24h)</a>
+              <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-100">Abonnement Bouquet Mensuel</a>
+              <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-100">Événements &amp; Cérémonies</a>
+            </div>
+          </div>
+
+          <a href="#a-propos" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-700">À propos</a>
+          <a href="/" class="px-3 py-2 rounded-md text-sm font-medium bg-blue-800 hover:bg-blue-900">Version
+            Bootstrap</a>
+        </div>
+
+        <!-- Formulaire de recherche -->
+        <div class="hidden sm:flex items-center space-x-2">
+          <input type="text" placeholder="Rechercher des fleurs..."
+            class="px-3 py-1.5 text-sm rounded-md text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-400">
+          <button type="button"
+            class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold px-3 py-1.5 rounded-md text-sm">Rechercher</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 2. Landing page avec slider contenant de vraies photos -->
+  <div class="relative w-full max-w-7xl mx-auto overflow-hidden shadow-lg mb-10">
+    <div id="tailwindSlider" class="relative w-full h-80 sm:h-96 md:h-[460px]">
+
+      <!-- Slide 1 -->
+      <div class="slider-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-100">
+        <img src="/public/images/slider1.jpg" class="w-full h-full object-cover" alt="Bouquet Passion">
+        <div
+          class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/60 text-white px-6 py-3 rounded-lg text-center max-w-xl">
+          <h2 class="text-xl font-bold">Bouquet Passion</h2>
+          <p class="text-sm mt-1">Roses rouges de prestige sélectionnées pour toutes vos déclarations.</p>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div
+        class="slider-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 pointer-events-none">
+        <img src="/public/images/slider2.jpg" class="w-full h-full object-cover" alt="Bouquet Printanier">
+        <div
+          class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/60 text-white px-6 py-3 rounded-lg text-center max-w-xl">
+          <h2 class="text-xl font-bold">Bouquet Printanier</h2>
+          <p class="text-sm mt-1">Tulipes fraîches et iris éclatants pour illuminer votre intérieur.</p>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div
+        class="slider-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 pointer-events-none">
+        <img src="/public/images/slider3.jpg" class="w-full h-full object-cover" alt="Bouquet Harmonie">
+        <div
+          class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/60 text-white px-6 py-3 rounded-lg text-center max-w-xl">
+          <h2 class="text-xl font-bold">Bouquet Harmonie</h2>
+          <p class="text-sm mt-1">Composé de lys blancs majestueux et orchidées raffinées.</p>
+        </div>
+      </div>
+
+      <!-- Slide 4 -->
+      <div
+        class="slider-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 pointer-events-none">
+        <img src="/public/images/slider4.jpg" class="w-full h-full object-cover" alt="Bouquet Champêtre">
+        <div
+          class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/60 text-white px-6 py-3 rounded-lg text-center max-w-xl">
+          <h2 class="text-xl font-bold">Bouquet Champêtre</h2>
+          <p class="text-sm mt-1">Fraîcheur sauvage et tournesols lumineux livrés à votre porte.</p>
+        </div>
+      </div>
+
+      <!-- Boutons Précédent / Suivant -->
+      <button id="prevBtn"
+        class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg">&#10094;</button>
+      <button id="nextBtn"
+        class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg">&#10095;</button>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- 3. Ligne responsive de quatre cartes de visite avec photo, en-tête, corps et pied -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+
+      <!-- Carte 1 -->
+      <div class="bg-white rounded-lg border border-gray-200 shadow-sm flex flex-col overflow-hidden">
+        <div class="bg-red-600 text-white px-4 py-3 font-bold text-base">
+          Bouquet Passion
+        </div>
+        <img src="/public/images/lys.jpg" class="w-full h-44 object-cover" alt="Roses Rouges">
+        <div class="p-4 flex-1">
+          <h3 class="font-bold text-lg mb-2 text-gray-900">Roses Rouges</h3>
+          <p class="text-gray-600 text-sm mb-3">Composition de 20 roses rouges fraîches. Personnalisez le nombre et
+            l'adresse de destination.</p>
+          <p class="font-bold text-gray-900">À partir de 29,90 DA</p>
+        </div>
+        <div class="bg-gray-50 border-t border-gray-200 px-4 py-2 text-xs text-gray-500">
+          Livraison sous 24h
+        </div>
+      </div>
+
+      <!-- Carte 2 -->
+      <div class="bg-white rounded-lg border border-gray-200 shadow-sm flex flex-col overflow-hidden">
+        <div class="bg-purple-700 text-white px-4 py-3 font-bold text-base">
+          Bouquet Printanier
+        </div>
+        <img src="/public/images/tulipe.jpg" class="w-full h-44 object-cover" alt="Tulipes Multicolores">
+        <div class="p-4 flex-1">
+          <h3 class="font-bold text-lg mb-2 text-gray-900">Tulipes &amp; Iris</h3>
+          <p class="text-gray-600 text-sm mb-3">Bouquet de tulipes multicolores du matin. Choisissez le mélange des
+            couleurs et la taille du bouquet.</p>
+          <p class="font-bold text-gray-900">À partir de 24,90 DA</p>
+        </div>
+        <div class="bg-gray-50 border-t border-gray-200 px-4 py-2 text-xs text-gray-500">
+          En stock - Fraîcheur garantie
+        </div>
+      </div>
+
+      <!-- Carte 3 -->
+      <div class="bg-white rounded-lg border border-gray-200 shadow-sm flex flex-col overflow-hidden">
+        <div class="bg-blue-600 text-white px-4 py-3 font-bold text-base">
+          Bouquet Harmonie
+        </div>
+        <img src="/public/images/lys.jpg" class="w-full h-44 object-cover" alt="Lys Blancs">
+        <div class="p-4 flex-1">
+          <h3 class="font-bold text-lg mb-2 text-gray-900">Lys &amp; Orchidées</h3>
+          <p class="text-gray-600 text-sm mb-3">L'élégance florale par excellence pour vos occasions spéciales, livrée
+            avec carte personnalisée.</p>
+          <p class="font-bold text-gray-900">À partir de 39,90 DA</p>
+        </div>
+        <div class="bg-gray-50 border-t border-gray-200 px-4 py-2 text-xs text-gray-500">
+          Emballage cadeau offert
+        </div>
+      </div>
+
+      <!-- Carte 4 -->
+      <div class="bg-white rounded-lg border border-gray-200 shadow-sm flex flex-col overflow-hidden">
+        <div class="bg-green-600 text-white px-4 py-3 font-bold text-base">
+          Bouquet Champêtre
+        </div>
+        <img src="/public/images/champetre.jpg" class="w-full h-44 object-cover" alt="Fleurs des Champs">
+        <div class="p-4 flex-1">
+          <h3 class="font-bold text-lg mb-2 text-gray-900">Tournesols &amp; Marguerites</h3>
+          <p class="text-gray-600 text-sm mb-3">Fleurs des champs cueillies selon la saison avec composition rustique et
+            naturelle.</p>
+          <p class="font-bold text-gray-900">À partir de 19,90 DA</p>
+        </div>
+        <div class="bg-gray-50 border-t border-gray-200 px-4 py-2 text-xs text-gray-500">
+          Fleurs 100% de saison
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 4. JumboTron TailwindCSS sur une nouvelle ligne -->
+    <div class="bg-gray-100 border border-gray-200 rounded-lg p-8 sm:p-10 mb-12" id="a-propos">
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">Notre Engagement Floral</h1>
+      <p class="text-lg text-gray-700 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+        laboris.</p>
+      <hr class="border-gray-300 my-6">
+      <p class="text-gray-600 mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+        officia deserunt mollit anim id est laborum.</p>
+      <a href="#"
+        class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg shadow">Commander
+        un bouquet</a>
+    </div>
+  </div>
+
+  <!-- 5. Pied de page équivalent à la classe alert (alert-primary) -->
+  <footer class="bg-blue-100 border-t border-blue-200 text-blue-900 py-6 text-center">
+    <div class="max-w-7xl mx-auto px-4">
+      <p class="text-sm mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel sem vel justo
+        molestie posuere.</p>
+      <p class="text-sm mb-2">
+        <a href="#" class="underline font-semibold hover:text-blue-950">Droit des utilisateurs et Politique de
+          confidentialité</a>
+      </p>
+      <p class="text-xs text-blue-700">&copy; 2026 FleurExpress SARL - Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script>
+    const slides = document.querySelectorAll('.slider-slide');
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        if (i === index) {
+          slide.classList.remove('opacity-0', 'pointer-events-none');
+          slide.classList.add('opacity-100');
+        } else {
+          slide.classList.remove('opacity-100', 'pointer-events-none');
+          slide.classList.add('opacity-0', 'pointer-events-none');
+        }
+      });
+    }
+
+    document.getElementById('nextBtn').addEventListener('click', () => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    });
+
+    document.getElementById('prevBtn').addEventListener('click', () => {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    });
+
+    setInterval(() => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }, 4000);
+  </script>
+</body>
+
+</html>
