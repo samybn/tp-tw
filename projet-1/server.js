@@ -14,7 +14,15 @@ server.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, 'views/index.html'));
 });
 
+server.get("/index.html", (req, res) => {
+  res.sendFile(path.join(__dirname, 'views/index.html'));
+});
+
 server.get("/tailwind", (req, res) => {
+  res.sendFile(path.join(__dirname, 'views/tailwind.html'));
+});
+
+server.get("/tailwind.html", (req, res) => {
   res.sendFile(path.join(__dirname, 'views/tailwind.html'));
 });
 
